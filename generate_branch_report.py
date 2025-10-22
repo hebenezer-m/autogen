@@ -139,6 +139,66 @@ def get_branch_info(branch: str) -> Dict:
     return info
 
 
+def categorize_branches(branches_info: List[Dict]) -> Dict[str, List[Dict]]:
+    """Categorize branches by their purpose based on name and commit message."""
+    categories = {
+        'Features': [],
+        'Bug Fixes': [],
+        'Documentation': [],
+        'Releases': [],
+        'Infrastructure/CI': [],
+        'Refactoring': [],
+        'Dependencies': [],
+        'Other': []
+    }
+    
+    for branch in branches_info:
+        name = branch.get('name', '').lower()
+        message = branch.get('last_commit_message', '').lower()
+        
+        # Skip main branch
+        if name == 'main':
+            continue
+            
+        categorized = False
+        
+        # Check for features
+        if any(keyword in name for keyword in ['feature', 'feat', 'add-', 'add_', 'new-', 'capability', 'support']):
+            categories['Features'].append(branch)
+            categorized = True
+        # Check for bug fixes
+        elif any(keyword in name for keyword in ['fix', 'bug', 'patch', 'hotfix']) or \
+             any(keyword in message for keyword in ['fix:', 'fixed', 'bugfix']):
+            categories['Bug Fixes'].append(branch)
+            categorized = True
+        # Check for documentation
+        elif any(keyword in name for keyword in ['doc', 'readme', 'tutorial']) or \
+             any(keyword in message for keyword in ['doc:', 'docs:', 'documentation']):
+            categories['Documentation'].append(branch)
+            categorized = True
+        # Check for releases
+        elif any(keyword in name for keyword in ['release', 'v0.', 'v1.', 'python-v', 'dotnet']):
+            categories['Releases'].append(branch)
+            categorized = True
+        # Check for infrastructure/CI
+        elif any(keyword in name for keyword in ['ci', 'workflow', 'pipeline', 'build', 'test', 'deploy']):
+            categories['Infrastructure/CI'].append(branch)
+            categorized = True
+        # Check for refactoring
+        elif any(keyword in name for keyword in ['refactor', 'cleanup', 'reorganize', 'migrate']):
+            categories['Refactoring'].append(branch)
+            categorized = True
+        # Check for dependencies
+        elif any(keyword in name for keyword in ['dep', 'upgrade', 'update', 'version']):
+            categories['Dependencies'].append(branch)
+            categorized = True
+        
+        if not categorized:
+            categories['Other'].append(branch)
+    
+    return categories
+
+
 def generate_markdown_report(branches_info: List[Dict]) -> str:
     """Generate a markdown report from branch information."""
     report = []
@@ -157,6 +217,7 @@ def generate_markdown_report(branches_info: List[Dict]) -> str:
     report.append("## Table of Contents")
     report.append("")
     report.append("- [Summary Statistics](#summary-statistics)")
+    report.append("- [Branch Categories](#branch-categories)")
     report.append("- [Branch Details](#branch-details)")
     report.append("")
     report.append("---")
@@ -200,6 +261,43 @@ def generate_markdown_report(branches_info: List[Dict]) -> str:
             if branch.get('files_changed', 0) > 0:
                 report.append(f"| {branch['name']} | {branch.get('files_changed', 0)} | +{branch.get('insertions', 0)} | -{branch.get('deletions', 0)} |")
         report.append("")
+    
+    report.append("---")
+    report.append("")
+    
+    # Branch Categories
+    report.append("## Branch Categories")
+    report.append("")
+    report.append("Branches categorized by their purpose based on branch names and commit messages.")
+    report.append("")
+    
+    categories = categorize_branches(branches_info)
+    
+    for category, branches in categories.items():
+        if branches:
+            report.append(f"### {category} ({len(branches)} branches)")
+            report.append("")
+            report.append("| Branch | Last Commit Message | Date |")
+            report.append("|--------|---------------------|------|")
+            
+            # Sort by date (most recent first)
+            sorted_branches = sorted(branches, 
+                                   key=lambda x: x.get('last_commit_date', ''), 
+                                   reverse=True)[:20]  # Show top 20 per category
+            
+            for branch in sorted_branches:
+                name = branch.get('name', 'N/A')
+                message = branch.get('last_commit_message', 'N/A')
+                # Truncate long messages
+                if len(message) > 80:
+                    message = message[:77] + "..."
+                date = branch.get('last_commit_date', 'N/A')[:10]
+                report.append(f"| {name} | {message} | {date} |")
+            
+            if len(branches) > 20:
+                report.append(f"| ... | *and {len(branches) - 20} more* | ... |")
+            
+            report.append("")
     
     report.append("---")
     report.append("")

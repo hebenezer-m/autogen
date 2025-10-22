@@ -1,6 +1,6 @@
 # Branch Comparison Report
 
-**Generated on:** 2025-10-22 16:41:45 UTC
+**Generated on:** 2025-10-22 18:39:30 UTC
 **Total branches analyzed:** 192
 **Comparison base:** main branch
 
@@ -9,6 +9,7 @@
 ## Table of Contents
 
 - [Summary Statistics](#summary-statistics)
+- [Branch Categories](#branch-categories)
 - [Branch Details](#branch-details)
 
 ---
@@ -18,7 +19,7 @@
 - **Branches ahead of main:** 191
 - **Branches behind main:** 190
 - **Branches in sync with main:** 1
-- **Branches with file changes:** 190
+- **Branches with file changes:** 191
 
 ### Top 10 Branches Most Ahead of Main
 
@@ -49,6 +50,151 @@
 | update_old_site_for_04 | 2604 | +189234 | -211064 |
 | wael/add-azure-dalle | 2603 | +188970 | -211064 |
 | autogenstudio_agenteval | 2581 | +173335 | -219086 |
+
+---
+
+## Branch Categories
+
+Branches categorized by their purpose based on branch names and commit messages.
+
+### Features (14 branches)
+
+| Branch | Last Commit Message | Date |
+|--------|---------------------|------|
+| add_to_display | Merge branch 'main' into add_to_display | 2025-02-17 |
+| rysweet-add-azd-container-apps-support | add a buffer to message delivery so that clients wh subscribe within a window... | 2025-02-14 |
+| rysweet-add-message-buffer-to-registry | adds a buffer to message delivery so that clients who subscribe within a five... | 2025-02-13 |
+| feature/azure-ai-inference-client | lint | 2025-01-20 |
+| add_stable | stable redirect | 2025-01-08 |
+| wael/add-azure-dalle | Merge branch '0.2' into wael/add-azure-dalle | 2024-10-18 |
+| feature/autogenstudio-ui-extra-headers | Merge branch 'main' into feature/autogenstudio-ui-extra-headers | 2024-07-01 |
+| tool_support | Merge branch 'main' into tool_support | 2024-04-25 |
+| audio-capability | Merge branch 'main' into audio-capability | 2024-04-04 |
+| add-sort-imports-to-precommit | add ruff rule for sorting imports in pre-commit hook, but disable it in CI | 2024-03-31 |
+| add-ruff-sort-rule-incrementally | CI test | 2024-03-28 |
+| add-ruff-sort-rule | run pre-commit on all files | 2024-03-28 |
+| 1214-feature-request-unify-function-decorators-for-function-calling-reply-termination-and-hook-functions | renaming | 2024-01-12 |
+| support_no_chromadb | Remove temp file | 2023-11-05 |
+
+### Bug Fixes (35 branches)
+
+| Branch | Last Commit Message | Date |
+|--------|---------------------|------|
+| copilot/fix-6542 | Merge branch 'main' into copilot/fix-6542 | 2025-05-21 |
+| copilot/fix-6210 | Merge branch 'main' into copilot/fix-6210 | 2025-05-19 |
+| ekzhu-fix-website | Fix website cards | 2025-03-12 |
+| dev/fix_agent_registration_consistency | Merge branch 'main' into dev/fix_agent_registration_consistency | 2025-03-06 |
+| gagb-fix-5212 | Run poe check | 2025-01-26 |
+| ags_minor_fixes | remove uneeded logging info messages, add log level | 2025-01-17 |
+| patch/v0.4.2 | Update to 0.4.2 | 2025-01-15 |
+| minior-assistant-fix | Minor API doc update for openai assistant agent | 2025-01-09 |
+| m1_debug_vd | format fixes | 2025-01-09 |
+| fix_ci | Merge branch 'main' into fix_ci | 2025-01-09 |
+| homepage-fix | Update links | 2025-01-08 |
+| docs-fixes | Fix agent and agent runtime in Core doc | 2025-01-08 |
+| u/fix#4618 | Update dotnet-build.yml | 2024-12-12 |
+| web_surfer_fixes | Merge branch 'web_surfer_fixes' of https://github.com/microsoft/autogen into ... | 2024-12-08 |
+| kostapetan/fix-runtime-broadcast | Merge branch 'main' into kostapetan/fix-runtime-broadcast | 2024-12-02 |
+| 4367-fix-code-scanning-alert---websites-must-specify-the-httponly-attribute-on-sensitive-cookies | Fix assistant agent doc (#4365) | 2024-11-25 |
+| husseinmozannar-patch-1 | Update README.md | 2024-11-14 |
+| revert-3470-patch-1 | Revert "Update Installation.md (#3470)" | 2024-09-05 |
+| anthropic-bedrock | fix: deprecate the check for aws session token | 2024-07-24 |
+| costfix | update | 2024-07-19 |
+| ... | *and 15 more* | ... |
+
+### Documentation (10 branches)
+
+| Branch | Last Commit Message | Date |
+|--------|---------------------|------|
+| copilot/generate-branch-modification-report | Add README documentation for branch comparison report | 2025-10-22 |
+| docs-update-for-parallel-tool-calls | Merge branch 'main' into docs-update-for-parallel-tool-calls | 2025-01-17 |
+| ags_docs_update | Merge branch 'main' into ags_docs_update | 2025-01-15 |
+| ags-readme | Merge branch 'main' into ags-readme | 2025-01-13 |
+| gagb-readme | Merge branch 'main' into gagb-readme | 2025-01-09 |
+| tutorial-index | Merge branch 'main' into tutorial-index | 2025-01-08 |
+| doc-polishing | Merge branch 'main' into doc-polishing | 2025-01-08 |
+| client_docs | Merge branch 'main' into client_docs | 2025-01-08 |
+| doc-update | Update website/docusaurus.config.js | 2024-06-30 |
+| readme-icon | Update README.md | 2023-12-02 |
+
+### Releases (19 branches)
+
+| Branch | Last Commit Message | Date |
+|--------|---------------------|------|
+| python-v0.4.9.3 | update version v0.4.9.3 | 2025-03-28 |
+| python-v0.4.9.2 | Upgrade llama cpp to 0.3.8 to fix windows related error (#5948) | 2025-03-14 |
+| python-v0.4.9.1 | update version to v0.4.9.1 | 2025-03-13 |
+| dev/agentchat_dotnet_groupchat | Merge branch 'main' into dev/agentchat_dotnet_groupchat | 2025-03-10 |
+| python-v0.4.8.2 | update version | 2025-03-07 |
+| dev/agentchat_dotnet_agents | Merge branch 'main' into dev/agentchat_dotnet_agents | 2025-03-06 |
+| python-v0.4.8.1 | update version number | 2025-03-05 |
+| dev/agentchat_dotnet | WIP: Factor out RunManager to manage GroupChat lifecycle | 2025-02-13 |
+| dev/grpc_dotnet_allup | feat: Enable Wildcard Subscriptions | 2025-01-31 |
+| dotnet-pre-python-alignment | interim | 2025-01-31 |
+| kostapetan/refactor-dotnet | samples work | 2024-12-19 |
+| release/dotnet/0.2.2 | Merge branch 'main' into release/dotnet/0.2.2 | 2024-11-16 |
+| dotnet | Fix spelling of "dotnet" (#3669) | 2024-10-06 |
+| release/dotnet/0.2.1 | [.NET] Release v0.2.1 (#3529) | 2024-09-13 |
+| release/dotnet/0.2.0 | [.Net] release v0.2.0 (#3483) | 2024-09-05 |
+| release/dotnet/0.1.0 | [.Net] Release 0.1.0 (#3398) | 2024-08-21 |
+| release/dotnet/0.0.17 | bump version and add release note (#3246) | 2024-07-29 |
+| release/dotnet/0.0.15 | Merge branch 'main' into release/dotnet/0.0.15 | 2024-06-14 |
+| release/dotnet/0.0.14 | [.Net] Update website for AutoGen.SemanticKernel and AutoGen.Ollama (#2814) | 2024-05-28 |
+
+### Infrastructure/CI (4 branches)
+
+| Branch | Last Commit Message | Date |
+|--------|---------------------|------|
+| integ-test | Merge branch 'main' into integ-test | 2024-12-10 |
+| workflow | make default model of  a constant class variable (#1780) | 2024-02-28 |
+| remove-contrib-openaitest | Openai assistant function usage notebook (#639) | 2023-11-13 |
+| mathtest | Merge remote-tracking branch 'origin/main' into mathtest | 2023-11-11 |
+
+### Refactoring (4 branches)
+
+| Branch | Last Commit Message | Date |
+|--------|---------------------|------|
+| migrate_to_event_rpc | Merge branch 'main' into migrate_to_event_rpc | 2024-12-30 |
+| ext-refactor | Merge branch 'main' into ext-refactor | 2024-12-04 |
+| refactorization-middleware | polishing | 2024-01-26 |
+| cleanup | cleanup | 2023-09-19 |
+
+### Dependencies (6 branches)
+
+| Branch | Last Commit Message | Date |
+|--------|---------------------|------|
+| u/xiaoyun/updateAOAI | update oai and aoai package version | 2025-04-07 |
+| version-requirement | Add python version requirement to frontpage and readme | 2025-01-12 |
+| update_old_site_for_04 | Update | 2025-01-08 |
+| remove_deprecations | Merge branch 'main' into remove_deprecations | 2025-01-08 |
+| initiate_chats_update | added finished_chat_indexes_to_exclude_from_carryover in a_initiate_chats | 2024-06-18 |
+| initiate_chat_updates | add AgentOptimizer test in CI (#2380) | 2024-04-16 |
+
+### Other (99 branches)
+
+| Branch | Last Commit Message | Date |
+|--------|---------------------|------|
+| 0.2 | Fix Typo - Update JSON_mode_example.ipynb (#6457) | 2025-05-29 |
+| mem | AIME 2025 tasks | 2025-05-21 |
+| ekzhu-optional-thought-as-content | Add option for openai client to avoid setting reasoning tokens as assistant m... | 2025-05-12 |
+| ekzhu-otel | Add message attributes to otel traces | 2025-05-06 |
+| ekzhu-stream-group-message | Merge branch 'main' into ekzhu-stream-group-message | 2025-04-16 |
+| gagb/qualcoder | Run poe fmt | 2025-03-26 |
+| ekzhu-otel-span-wip | wip | 2025-03-07 |
+| ekzhu-nested-team | Nested teams in group chats | 2025-03-06 |
+| rysweet-typescript | Merge branch 'main' into rysweet-typescript | 2025-03-06 |
+| ekzhu-log-tools | fix | 2025-03-06 |
+| ame | module path changes | 2025-03-03 |
+| rysweet-typescript-grpc | iteration on the tests | 2025-02-26 |
+| control_stream | Abstract channel, add control channel | 2025-02-07 |
+| dev/AGCore.Grpc | wip: Implementing GrpcGateway | 2025-01-30 |
+| rysweet-ohdear-i-lost-something | stash | 2025-01-28 |
+| rysweet-HelloAppHost-python-check | interim | 2025-01-26 |
+| raimondasl/issue-5186 | Merge branch 'main' into raimondasl/issue-5186 | 2025-01-24 |
+| declarative_agentchat_team_vd | Merge remote-tracking branch 'origin/main' into declarative_agentchat_team_vd | 2025-01-23 |
+| m1_singleton_team | Merge branch 'main' into m1_singleton_team | 2025-01-16 |
+| dev/async_input | feat: Change async input strategy | 2025-01-15 |
+| ... | *and 79 more* | ... |
 
 ---
 
@@ -2686,17 +2832,23 @@ Detailed information for each branch, sorted alphabetically.
 ### copilot/generate-branch-modification-report
 
 **Last Commit:**
-- Hash: `11b801b9`
+- Hash: `c262b831`
 - Author: copilot-swe-agent[bot]
-- Date: 2025-10-22 16:34:21 +0000
-- Message: Initial plan
+- Date: 2025-10-22 16:45:03 +0000
+- Message: Add README documentation for branch comparison report
 
 **Comparison with main:**
-- Commits ahead: 1
+- Commits ahead: 3
 - Commits behind: 0
 
 **Changes:**
-- No changes
+- 3 files changed, 13964 insertions(+)
+
+**Modified files:**
+
+- `BRANCH_COMPARISON_REPORT.md`
+- `BRANCH_REPORT_README.md`
+- `generate_branch_report.py`
 
 ---
 
